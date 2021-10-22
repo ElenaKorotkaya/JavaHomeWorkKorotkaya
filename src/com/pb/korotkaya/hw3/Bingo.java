@@ -9,7 +9,7 @@ public class Bingo {
 
         System.out.println("Введите число от 0 до 100. ");
         System.out.println("У Вас 10 попыток. ");
-        System.out.println("Для завершения игры введите: END. ");
+        System.out.println("Для завершения игры введите: 102. ");
 
         //String s1 = "END";
         Random random = new Random();
