@@ -32,7 +32,7 @@ public class VetClinic {
             System.out.println("hashCode " + x.hashCode());
         }
 
-            //РУФЛЕКСИЯ
+            //РЕФЛЕКСИЯ
         Veterinarian veterenarian = null;
         try {
             Class clazz = Class.forName(Veterinarian.class.getName());
