@@ -1,6 +1,6 @@
 package com.pb.korotkaya.hw6;
 
-public abstract class Animal {
+public class Animal {
 
     String food;
     String location;
@@ -22,8 +22,4 @@ public abstract class Animal {
         System.out.println("Животное спит. ");
         System.out.println("Животное бодрствует. ");
     }
-
-    public static void main(String[] args) {
-    }
-
 }
