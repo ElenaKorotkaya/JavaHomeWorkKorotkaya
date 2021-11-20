@@ -37,7 +37,7 @@ public class Auth {
 
         if(login.equals(log) && password.equals(password2)) {
             System.out.println(new StringBuilder().append("Добро пожаловать, ").append(login).toString());
-            throw new WrongLoginException("Вы ввели неверные данные! ");
+
         } else {
             throw new WrongLoginException("Вы ввели неверные данные! ");
         }
