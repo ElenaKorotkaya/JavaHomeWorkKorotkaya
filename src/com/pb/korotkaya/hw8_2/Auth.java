@@ -35,10 +35,11 @@ public class Auth {
 
     public void signIn(String log, String password2) throws WrongLoginException {
 
-        if(!(login.equals(log)) || (!(password.equals(password2)))) {
+        if(login.equals(log) && password.equals(password2)) {
+            System.out.println(new StringBuilder().append("Добро пожаловать, ").append(login).toString());
             throw new WrongLoginException("Вы ввели неверные данные! ");
         } else {
-            System.out.println(new StringBuilder().append("Добро пожаловать, ").append(login).toString());
+            throw new WrongLoginException("Вы ввели неверные данные! ");
         }
     }
 }
