@@ -64,6 +64,7 @@ public class FileNumber {
             ex.printStackTrace();
         }
     }
+
 }
 
             //ЗАМЕНИТЬ ЧЕТНЫЕ НА 0 (считать строки, выделить числа по " ", четные заменить на 0
@@ -93,7 +94,7 @@ public class FileNumber {
         System.exit(0);
     }
     //ПЕЧАТАЕТСЯ МАССИВ
-                System.out.println(new String(Files.readAllBytes(Paths.get("numbers.txt"))));
+                System.out.println(new String(Files.readAllBytes(Paths.get("odd-numbers.txt"))));
 
 }
 }

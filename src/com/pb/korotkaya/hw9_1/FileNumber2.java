@@ -1,14 +1,11 @@
-package com.pb.korotkaya.hw9;
+package com.pb.korotkaya.hw9_1;
 
 import java.io.*;
 import java.util.Random;
 
-public class FileNumber {
+public class FileNumber2 {
 
-    public FileNumber() throws IOException {
-    }
-
-    public void createNumbersFile() {
+    public static void createNumbersFile() {
 
         File out = new File("numbers.txt");
         FileWriter fw = null;
@@ -37,15 +34,34 @@ public class FileNumber {
             System.exit(0);
         }
     }
+    public static void oddNumbersFile() throws FileNotFoundException {
+
+        BufferedReader reader = new BufferedReader(new FileReader("numbers.txt"));
+        int n = 10;
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     //считывание файла
     public static void main(String[] args) throws IOException {
+        //createNumbersFile();
+        //oddNumbersFile();
+
+
+        /*
         BufferedReader reader = new BufferedReader(new FileReader("numbers.txt"));
         String line = reader.readLine();
         while (line != null) {
             System.out.println(line);
             line = reader.readLine();
+
+
         }   reader.close();
+*/
+
     }
 
 }
