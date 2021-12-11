@@ -32,8 +32,8 @@ public class NumBox <T extends Number> {
     }
 
     public double average(){
-        double avarage = (sum()/length());
-        return avarage;
+        double average = (sum()/length());
+        return average;
     }
 
     public double sum() {
