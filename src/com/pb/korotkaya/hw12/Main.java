@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -91,9 +92,12 @@ public class Main {
 
     private static void contactDelete() {
         System.out.println("Введите имя абонента для удаления ");
-        contacts.removeIf(c -> c.getName().equals(in.next()));
-        System.out.println("Контакт удален! ");
+        if (contacts.removeIf(c -> c.getName().toLowerCase(Locale.ROOT).equals(in.next().toLowerCase(Locale.ROOT)))) {
+            System.out.println("Контакт удален! ");
+        } else System.out.println("Имя не найдено! ");
     }
+    //contacts.removeIf(c -> c.getName().equals(in.next()));
+    //System.out.println("Контакт удален! ");
     private static void contactView() {
         contacts.stream().forEach(System.out :: println);   //стрим можно удалить
     }
@@ -105,7 +109,8 @@ public class Main {
     }
     private static void contactSearchName() {
         System.out.println("Введите имя абонента для поиска: ");
-        contacts.stream().filter(c -> c.getName().equals(in.next())).forEach(System.out :: println);
+        contacts.stream().filter(c -> c.getName().toLowerCase(Locale.ROOT).
+                equals(in.next().toLowerCase(Locale.ROOT))).forEach(System.out :: println);
     }
     private static void contactEdit() {
         if (contacts.isEmpty()) {
