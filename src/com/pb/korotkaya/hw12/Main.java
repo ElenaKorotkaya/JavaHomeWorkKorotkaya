@@ -1,6 +1,5 @@
 package com.pb.korotkaya.hw12;
 
-import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -30,34 +29,34 @@ public class Main {
                     "8.Загрузка из файла всех данных\n" +
                     "9.Выход?");
 
-            int com = in.nextInt();
+            String com = in.next();
 
             switch (com) {
-                case 1:
+                case "1":
                     contactNew();
                     break;
-                case 2:
+                case "2":
                     contactDelete();
                     break;
-                case 3:
+                case "3":
                     contactView();
                     break;
-                case 4:
+                case "4":
                     contactSearchPhone();
                     break;
-                case 5:
+                case "5":
                     contactSearchName();
                     break;
-                case 6:
+                case "6":
                     contactEdit();
                     break;
-                case 7:
+                case "7":
                     contactWrite();
                     break;
-                case 8:
+                case "8":
                     contactRead();
                     break;
-                case 9:
+                case "9":
                     exit = true;
                     break;
                 default:
@@ -135,10 +134,10 @@ public class Main {
                         "Введите 5, если хотите отредактировать дату\n" +
                         "Введите 6, если хотите выйти\n");
 
-                int com = in.nextInt();
+                String com = in.next();
 
                 switch (com) {
-                    case 1:
+                    case "1":
                         System.out.println("Старое имя " + contacts.get(index-1).getName());
                         System.out.println("Введите новое имя: ");
                         contacts.set(index-1, contacts.get(index-1)).setName(in.next(), LocalDateTime.now());
@@ -147,7 +146,7 @@ public class Main {
                         //contacts.set(index-1, contacts.get(index-1));
                         System.out.println("Контакт сохранен! ");
                         break;
-                    case 2:
+                    case "2":
                         System.out.println("Старый телефон: " + contacts.get(index-1).getPhone1());
                         System.out.println("Введите новый номер телефона: ");
                         contacts.set(index-1, contacts.get(index-1)).setPhone1(in.next(), LocalDateTime.now());
@@ -155,7 +154,7 @@ public class Main {
 
                         System.out.println("Контакт сохранен! ");
                         break;
-                    case 3:
+                    case "3":
                         System.out.println("Старый телефон: " + contacts.get(index-1).getPhone2());
                         System.out.println("Введите новый номер телефона: ");
                         contacts.set(index-1, contacts.get(index-1)).setPhone2(in.next(), LocalDateTime.now());
@@ -163,7 +162,7 @@ public class Main {
 
                         System.out.println("Контакт сохранен! ");
                         break;
-                    case 4:
+                    case "4":
                         System.out.println("Старый адрес: " + contacts.get(index-1).getAddress());
                         System.out.println("Введите новый адрес: ");
                         contacts.set(index-1, contacts.get(index-1)).setAddress(in.next(), LocalDateTime.now());
@@ -171,7 +170,7 @@ public class Main {
 
                         System.out.println("Контакт сохранен! ");
                         break;
-                    case 5:
+                    case "5":
                         System.out.println("Старая дата рождения: " + contacts.get(index-1).getDateOfBirth());
                         System.out.println("Введите новую дату рождения через в формате XXXX XX XX через пробел: ");
                         contacts.set(index-1, contacts.get(index-1)).setDateOfBirth(LocalDate.of(in.nextInt(), in.nextInt(), in.nextInt()),
@@ -180,7 +179,7 @@ public class Main {
 
                         System.out.println("Контакт сохранен! ");
                         break;
-                    case 6:
+                    case "6":
                         exit = true;
                         break;
                     default:
