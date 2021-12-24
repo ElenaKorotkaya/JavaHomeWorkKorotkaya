@@ -93,7 +93,7 @@ public class Main {
         System.out.println("Введите имя абонента для удаления ");
         if (contacts.removeIf(c -> c.getName().toLowerCase(Locale.ROOT).equals(in.next().toLowerCase(Locale.ROOT)))) {
             System.out.println("Контакт удален! ");
-        } else System.out.println("Имя не найдено! ");
+        } else System.out.println("Контакт не найден! ");
     }
     //contacts.removeIf(c -> c.getName().equals(in.next()));
     //System.out.println("Контакт удален! ");
@@ -114,6 +114,7 @@ public class Main {
     private static void contactEdit() {
         if (contacts.isEmpty()) {
             System.out.println("Список пуст! ");
+
         } else {
             for (int i = 0; i < contacts.size(); i++) {
                 System.out.println("#" + (i + 1) + " " + contacts.get(i));
@@ -145,30 +146,31 @@ public class Main {
 
                         //contacts.set(index-1, contacts.get(index-1));
                         System.out.println("Контакт сохранен! ");
+
                         break;
                     case "2":
                         System.out.println("Старый телефон: " + contacts.get(index-1).getPhone1());
                         System.out.println("Введите новый номер телефона: ");
                         contacts.set(index-1, contacts.get(index-1)).setPhone1(in.next(), LocalDateTime.now());
                         System.out.println("Новый телефон: " + contacts.get(index-1).getPhone1());
-
                         System.out.println("Контакт сохранен! ");
+
                         break;
                     case "3":
                         System.out.println("Старый телефон: " + contacts.get(index-1).getPhone2());
                         System.out.println("Введите новый номер телефона: ");
                         contacts.set(index-1, contacts.get(index-1)).setPhone2(in.next(), LocalDateTime.now());
                         System.out.println("Новый телефон: " + contacts.get(index-1).getPhone1());
-
                         System.out.println("Контакт сохранен! ");
+
                         break;
                     case "4":
                         System.out.println("Старый адрес: " + contacts.get(index-1).getAddress());
                         System.out.println("Введите новый адрес: ");
                         contacts.set(index-1, contacts.get(index-1)).setAddress(in.next(), LocalDateTime.now());
                         System.out.println("Новый адрес: " + contacts.get(index-1).getAddress());
-
                         System.out.println("Контакт сохранен! ");
+
                         break;
                     case "5":
                         System.out.println("Старая дата рождения: " + contacts.get(index-1).getDateOfBirth());
@@ -176,8 +178,8 @@ public class Main {
                         contacts.set(index-1, contacts.get(index-1)).setDateOfBirth(LocalDate.of(in.nextInt(), in.nextInt(), in.nextInt()),
                                 LocalDateTime.now());
                         System.out.println("Новая дата рождения: " + contacts.get(index-1).getDateOfBirth());
-
                         System.out.println("Контакт сохранен! ");
+
                         break;
                     case "6":
                         exit = true;
